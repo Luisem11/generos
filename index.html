@@ -68,8 +68,6 @@
         .layer {
 
             position: relative;
-            top: 20px;
-            left: 0px;
             z-index: 4;
 
             /*
@@ -243,12 +241,17 @@
                 <source src="#" type="video/mp4">
             </video>
 
-            <div class="layer">
-                <a class="btn pl-3 " id="volver">
-                    <img class="img-fluid pl-1 float-left" id="volver" style="width: 75%;"
-                        onclick="fullpage_api.moveSectionUp()" src="src/botones/boton_volver/boton_volver_unpress.png"
-                        onmouseover="this.src='src/botones/boton_volver/boton_volver_press.png'"
-                        onmouseout="this.src='src/botones/boton_volver/boton_volver_unpress.png'" alt="#"></a>
+            <div class="d-flex flex-row layer">
+                <div class="row " style="width: 100%;">
+                    <div class="col-6 col-md-sm-3 ">
+                        <a class="btn m-0 " id="volver">
+                            <img class=" img-fluid mt-2" id="volver" style="max-width: 80%;"
+                                onclick="fullpage_api.moveSectionUp()"
+                                src="src/botones/boton_volver/boton_volver_unpress.png"
+                                onmouseover="this.src='src/botones/boton_volver/boton_volver_press.png'"
+                                onmouseout="this.src='src/botones/boton_volver/boton_volver_unpress.png'" alt="#"></a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
