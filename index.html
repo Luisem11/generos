@@ -15,18 +15,6 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <style>
-        /* Style for our header texts
-	* --------------------------------------- */
-        h1 {
-            font-size: 5em;
-            font-family: arial, helvetica;
-            color: #fff;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Centered texts in each section
-	* --------------------------------------- */
         .section {
             text-align: center;
             overflow: hidden;
@@ -36,22 +24,32 @@
         #section2 {
             background-image: url(src/sprites/fondo__collages.png);
             background-position-y: -80px;
+            background-position-x: 20px;
         }
 
         #section1 {
             background-image: url(src/sprites/portada_.png);
             background-size: cover;
+            background-size: 100% auto;
+        }
+
+        #section3 {
+            background-color: black;
+            background-size: cover;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+
+            background-size: 100% auto;
         }
 
         #video {
             position: absolute;
             right: 0;
-            bottom: 0;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            background-size: 100% 100%;
+            max-width: 100%;
+            height: auto;
+            background-size: 100% auto;
             background-color: black;
             /* in case the video doesn't fit the whole page*/
             background-position: center center;
@@ -67,10 +65,9 @@
 	* --------------------------------------- */
         .layer {
 
-            text-align: left;
             position: relative;
             top: 20px;
-            left: 50px;
+            left: 0px;
             z-index: 4;
 
             /*
@@ -92,19 +89,19 @@
         /* Hiding video controls
 	* See: https://css-tricks.com/custom-controls-in-html5-video-full-screen/
 	* --------------------------------------- */
-        video::-webkit-media-controls {
+        /* video::-webkit-media-controls {
             display: none !important;
-        }
+        } */
 
 
         .lf-con {
             left: 50px
         }
 
-        .back {
+        /* .back {
             position: absolute;
             z-index: 4;
-        }
+        } */
 
         .front {
             background-color: rgba(0, 0, 0, 0.2);
@@ -119,25 +116,31 @@
     <div id="fullpage">
         <div class="section active" id="section1">
             <div class="d-flex justify-content-center " style="padding-top: 35%;">
-                <a class="btn " id="comenzar">
+                <a class="btn " id="comenzar" style="width: 50%;">
                     <img class="img-fluid" id="comenzar_img" src="src\botones\boton_comenzar\boton_comenzar_unpress.png"
                         onmouseover="this.src='src/botones/boton_comenzar/boton_comenzar_press.png'"
                         onmouseout="this.src='src/botones/boton_comenzar/boton_comenzar_unpress.png'"
                         onclick="fullpage_api.moveSectionDown()" alt="#"></a>
             </div>
         </div>
-        <div class="section pb-5 px-5 " id="section2">
+        <div class="section pb-md-5 px-md-5 " id="section2">
+
             <div class="back">
-                <div class="layer ">
-                    <a class="btn pl-5 " id="inicio">
-                        <img class="img-fluid pl-1" id="inicio" onclick="fullpage_api.moveSectionUp()"
-                            src="src/botones/boton_inicio/boton_inicio_unpress.png"
-                            onmouseover="this.src='src/botones/boton_inicio/boton_inicio_press.png'"
-                            onmouseout="this.src='src/botones/boton_inicio/boton_inicio_unpress.png'" alt="#"></a>
-                </div>
 
                 <div class="container-fluid ">
-                    <div class="row  mt-3 mx-5">
+                    <div class="row ">
+                        <div class="col- 6 col-md-sm-3 ">
+                            <a class="btn m-0 " id="inicio">
+                                <img class=" img-fluid mt-3" id=" inicio" style="max-width: 80%;"
+                                    onclick="fullpage_api.moveSectionUp()"
+                                    src="src/botones/boton_inicio/boton_inicio_unpress.png"
+                                    onmouseover="this.src='src/botones/boton_inicio/boton_inicio_press.png'"
+                                    onmouseout="this.src='src/botones/boton_inicio/boton_inicio_unpress.png'"
+                                    alt="#"></a>
+                        </div>
+                    </div>
+
+                    <div class="row  mt-md-3 mx-md-5">
                         <div class="col-12 col-sm-12 col-md-8 ">
                             <div class="row ">
                                 <div class="col-12 col-sm-5 col-md-5 p-0 ">
@@ -152,26 +155,26 @@
 
                             </div>
                         </div>
-                        <div class="col-4 ">
+                        <div class="col-12 col-md-4 ">
                             <a class="btn" id="bolero">
                                 <img id="bolero_img" class="img-fluid" src="src\botones\generos_\bolero_unpress.png"
                                     alt="#"></a>
                         </div>
                     </div>
-                    <div class="row mr-5 ">
-                        <div class="col-4  p-0">
-                            <a class="btn p-0 ml-3" id="rock">
+                    <div class="row mr-md-5 ">
+                        <div class="col-12 col-md-4  p-md-0">
+                            <a class="btn p-md-0 ml-md-3" id="rock">
                                 <img id="rock_img" class="img-fluid p-0" src="src\botones\generos_\rock_unpress.png"
                                     alt="#"></a>
                         </div>
-                        <div class="col-5">
+                        <div class="col-12 col-md-5">
                             <div class="row ">
-                                <div class="col-6  align-self-end">
+                                <div class="col-12 col-md-6  align-self-end">
                                     <a class="btn" id="salsa">
                                         <img id="salsa_img" class="img-fluid"
                                             src="src\botones\generos_\salsa_unpress.png" alt="#"></a>
                                 </div>
-                                <div class="col-6 pb-2 ">
+                                <div class="col-12 col-md-6 pb-md-2 ">
                                     <a class="btn" id="hiphop">
                                         <img id="hiphop_img" class="img-fluid"
                                             src="src\botones\generos_\hiphop_unpress.png" alt="#"></a>
@@ -181,7 +184,7 @@
                             </div>
                         </div>
 
-                        <div class="col-3 align-self-end">
+                        <div class="col-12 col-md-3 align-self-end">
                             <a class="btn " id="champeta">
                                 <img id="champeta_img" class="img-fluid" src="src\botones\generos_\champeta_unpress.png"
                                     alt="#"></a>
@@ -189,33 +192,33 @@
 
 
                     </div>
-                    <div class="row mx-5 mb-5">
-                        <div class="col-4 ">
-                            <a class="btn ml-5 mr-3" id="tropical">
+                    <div class="row mx-md-5 mb-md-5">
+                        <div class="col-12 col-md-4 ">
+                            <a class="btn ml-md-5 mr-md-3" id="tropical">
                                 <img id="tropical_img" class="img-fluid" src="src\botones\generos_\tropical_unpress.png"
                                     alt="#"></a>
                         </div>
 
-                        <div class="col-4">
+                        <div class="col-12 col-md-4">
                             <a class="btn" id="tango">
                                 <img id="tango_img" class="img-fluid" src="src\botones\generos_\tango_unpress.png"
                                     alt="#"></a>
                         </div>
-                        <div class="col-4 p-0">
-                            <a class="btn p-0" id="ranchera">
+                        <div class="col-12 col-md-4 p-0">
+                            <a class="btn p-md-0" id="ranchera">
                                 <img id="ranchera_img" class="img-fluid p-0"
                                     src="src\botones\generos_\ranchera_unpress.png" alt="#"></a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="front d-flex justify-content-center h-100" onclick="this.remove()" id="panel">
+            <!-- <div class="front d-flex justify-content-center h-100" onclick="this.remove()" id="panel">
                 <div class="card m-5" onclick="myFunction()"
                     style="width: auto;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                     <div class="card-body ">
-                        <!-- <button type="button" class="close" aria-label="Close">
+                        <button type="button" class="close" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
-                        </button> -->
+                        </button> 
 
                         <img id="intro" class=" card-img-top mt-5" style="width: 350px;"
                             src="src/sprites/cuadro_tutorial.png">
@@ -226,19 +229,21 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
 
 
         </div>
         <div class="section " id="section3">
+
             <video id="video" data-autoplay onended="fullpage_api.moveSectionUp()" controls>
                 <source src="#" type="video/mp4">
             </video>
+
             <div class="layer">
-                <a class="btn pl-5 " id="volver">
-                    <img class="img-fluid pl-1" id="volver" onclick="fullpage_api.moveSectionUp()"
-                        src="src/botones/boton_volver/boton_volver_unpress.png"
+                <a class="btn pl-3 " id="volver">
+                    <img class="img-fluid pl-1 float-left" id="volver" style="width: 70%;"
+                        onclick="fullpage_api.moveSectionUp()" src="src/botones/boton_volver/boton_volver_unpress.png"
                         onmouseover="this.src='src/botones/boton_volver/boton_volver_press.png'"
                         onmouseout="this.src='src/botones/boton_volver/boton_volver_unpress.png'" alt="#"></a>
             </div>
@@ -246,6 +251,9 @@
     </div>
 
     <script type="text/javascript" src="js/fullpage.js"></script>
+
+    <script type="text/javascript" src="js/scrolloverflow.js"></script>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="js/jquery-3.4.1.slim.min.js">
@@ -262,6 +270,8 @@
                 autoScrolling: true,
                 continuousVertical: true,
                 keyboardScrolling: false,
+
+                scrollOverflow: true,
 
                 afterLoad: function (index) {}
             });
@@ -338,6 +348,11 @@
             e.preventDefault();
             document.getElementById('ranchera_img').src = 'src/botones/generos_/ranchera_press.png'
             document.getElementById('video').src = 'src/videos/Ranchera_Final.mp4'
+            fullpage_api.moveSectionDown()
+        });
+        document.querySelector('#volver').addEventListener('click', function (e) {
+            e.preventDefault();
+            document.getElementById('video').src.pause();
             fullpage_api.moveSectionDown()
         });
     </script>
